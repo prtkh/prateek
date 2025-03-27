@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartClass 9 MCQ Portal</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="light-mode">
+    <div class="user-panel" id="user-panel">
+        <div class="auth-container">
+            <h2><i class="fas fa-graduation-cap"></i> SmartClass 9</h2>
+            <input type="text" id="username" placeholder="Enter your name">
+            <button id="login-btn"><i class="fas fa-sign-in-alt"></i> Begin Learning</button>
+        </div>
+    </div>
+
+    <div class="quiz-container" id="quiz-container">
+        <header>
+            <div class="header-left">
+                <h1><i class="fas fa-brain"></i> SmartClass 9</h1>
+                <div class="user-info">
+                    <span id="display-username"></span>
+                    <button id="logout-btn"><i class="fas fa-sign-out-alt"></i></button>
+                </div>
+            </div>
+            <button id="dark-mode-toggle"><i class="fas fa-moon"></i></button>
+        </header>
+
+        <main>
+            <div class="dashboard">
+                <div class="controls">
+                    <div class="selection-panel">
+                        <select id="subject-select">
+                            <option value="">Select Subject</option>
+                            <!-- Subjects loaded dynamically -->
+                        </select>
+
+                        <select id="chapter-select" disabled>
+                            <option value="">Select Chapter</option>
+                        </select>
+
+                        <select id="difficulty-select">
+                            <option value="all">All Difficulties</option>
+                            <option value="easy">Easy</option>
+                            <option value="medium">Medium</option>
+                            <option value="hard">Hard</option>
+                        </select>
+
+                        <button id="start-quiz"><i class="fas fa-play"></i> Start Quiz</button>
+                    </div>
+                </div>
+
+                <div class="quiz-area" id="quiz-area">
+                    <div class="quiz-meta">
+                        <div class="progress-container">
+                            <div id="progress-bar"></div>
+                            <span id="progress-text">0/0</span>
+                        </div>
+                        <div class="timer-container">
+                            <i class="fas fa-clock"></i> <span id="timer">30</span>s
+                        </div>
+                    </div>
+
+                    <div id="quiz"></div>
+                    <button id="submit" class="hidden"><i class="fas fa-paper-plane"></i> Submit</button>
+                    <div id="results"></div>
+                </div>
+
+                <div class="leaderboard-container">
+                    <h3><i class="fas fa-trophy"></i> Top Performers</h3>
+                    <div id="leaderboard"></div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <audio id="correct-sound" src="https://assets.mixkit.co/sfx/preview/mixkit-correct-answer-tone-2870.mp3"></audio>
+    <audio id="wrong-sound" src="https://assets.mixkit.co/sfx/preview/mixkit-wrong-answer-fail-notification-946.mp3"></audio>
+
+    <script src="script.js"></script>
+</body>
+</html>
